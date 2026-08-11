@@ -2,6 +2,24 @@
 
 **Automatically benchmark and optimize the attention mechanism in diffusion models for maximum generation speed.**
 
+## Changelog
+
+### Unreleased / `main` tip
+- **Add Comfy Kitchen (ck) attention backend** — detection, validation, and per-model apply via `set_model_optimized_attention()` with `container_function` support (ComfyUI PR #15479, `comfy-kitchen>=0.2.30`).
+- **Statistical benchmarking methodology** (ported from `diag_nvfp4_extended.py`):
+  - per-iteration CUDA event timing → `mean ± σ`, `p50`, `p95`
+  - TFLOPS reporting per backend
+  - exact exception capture for fallback root-causing
+  - optional M-scaling sweep across sequence lengths (`seq_sweep`: `off`/`quick`/`full`)
+  - JSON export via `json_path` input
+- New node inputs: `timing_iters`, `timing_warmup`, `seq_sweep`, `json_path`.
+
+### v1.0.1
+- Fix cross-attention crash and use per-model attention override (#3).
+
+### v1.0.0
+- Initial release.
+
 ## Why This Matters
 
 ### The Problem

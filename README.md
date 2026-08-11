@@ -4,7 +4,7 @@
 
 ## Changelog
 
-### Unreleased / `main` tip
+### 1.0.2
 - **Add Comfy Kitchen (ck) attention backend** — detection, validation, and per-model apply via `set_model_optimized_attention()` with `container_function` support (ComfyUI PR #15479, `comfy-kitchen>=0.2.30`).
 - **Statistical benchmarking methodology** (ported from `diag_nvfp4_extended.py`):
   - per-iteration CUDA event timing → `mean ± σ`, `p50`, `p95`

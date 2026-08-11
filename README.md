@@ -109,6 +109,10 @@ pip install xformers
 | `auto_apply` | bool | True | Apply the selected backend to this model |
 | `seq_len` | int | 8192 | Sequence length for benchmark |
 | `num_heads` | int | 24 | Number of attention heads |
+| `timing_iters` | int | 30 | Timing iterations per backend (mean/std/p50/p95 via CUDA events) |
+| `timing_warmup` | int | 10 | Warmup iterations per backend |
+| `seq_sweep` | dropdown | `off` | M-scaling sweep: `off`, `quick` (seq/2, seq\*2), `full` (grid 256..16384) |
+| `json_path` | str | "" | Optional path to export full benchmark results as JSON |
 
 ### Node Outputs
 
@@ -136,6 +140,7 @@ pip install xformers
 | `sage_fp8_cuda_fast` | SageAttention FP8++ | Even faster FP8 |
 | `sage3` | SageAttention 3 | RTX 50xx (Blackwell) only |
 | `flash` | Flash Attention 2 | H100, A100, RTX 30xx/40xx |
+| `ck` | Comfy Kitchen int8 | CUDA, requires ComfyUI PR #15479 / `comfy-kitchen>=0.2.30` |
 
 ## Model Compatibility
 
